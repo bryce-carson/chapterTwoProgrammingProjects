@@ -176,6 +176,9 @@ int main() {
 
         int month_counter = loan_term;
         while (loan_principle_cents_Integer > 0) {
+            if (loan_principle_cents_Integer < loan_payment_cents_Integer) {
+                loan_payment_cents_Integer = loan_principle_cents_Integer;
+            }
             cout.precision(2);
             cout << "Month:\t" << abs(loan_term - month_counter) << "\tPayment:\t¢" << loan_payment_cents_Integer
                  << "\tPrincipal:\t$" << fixed << loan_principle_cents_Integer / 100.00 << endl;
